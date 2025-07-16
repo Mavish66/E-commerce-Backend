@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+// require("dotenv").config();
 require("dotenv").config();
-const db = require("./models"); // ✅ Sequelize models import
+const db = require("./models"); // ✅ Sequelize models check once import
 
 const app = express();
 
@@ -16,6 +17,13 @@ app.use("/api/auth", authRoutes);
 app.get("/", (req, res) => {
   res.send("E-commerce backend is running...");
 });
+
+const productRoutes = require("./routes/product.routes");
+const categoryRoutes = require("./routes/category.routes");
+
+app.use("/api/products", productRoutes);
+app.use("/api/categories", categoryRoutes);
+
 
 
 
