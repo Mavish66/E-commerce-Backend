@@ -1,9 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-// require("dotenv").config();
 require("dotenv").config();
 const db = require("./models"); // ✅ Sequelize models check once import
-
 const app = express();
 
 app.use(cors());
